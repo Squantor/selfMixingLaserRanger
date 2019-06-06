@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 3
+Sheet 1 4
 Title ""
 Date ""
 Rev ""
@@ -45,7 +45,7 @@ $EndSheet
 $Sheet
 S 2500 1000 1000 1000
 U 5CF965FB
-F0 "Sheet5CF965FA" 50
+F0 "laser ranger power" 50
 F1 "laserRangerPower.sch" 50
 F2 "VSS_IN" I L 2500 1500 50 
 F3 "VDD_IN" I L 2500 1300 50 
@@ -93,4 +93,16 @@ Text Label 3550 1750 0    50   ~ 0
 REF
 Wire Wire Line
 	3550 1750 3500 1750
+$Sheet
+S 4500 1000 1000 1000
+U 5CF98672
+F0 "laser ranger driver" 50
+F1 "laserRangerDriver.sch" 50
+$EndSheet
+$Sheet
+S 4500 2500 1000 1000
+U 5CF98760
+F0 "Laser ranger sense" 50
+F1 "laserRangerSense.sch" 50
+$EndSheet
 $EndSCHEMATC

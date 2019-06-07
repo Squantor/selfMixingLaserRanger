@@ -8,4 +8,4 @@ https://github.com/Squantor/selfMixingLaserRanger.git
 # Repository structure
 * The [hardware](https://github.com/Squantor/selfMixingLaserRanger/tree/master/hardware) directory contains all the release and prototyping hardware.
 * The [software](https://github.com/Squantor/selfMixingLaserRanger/tree/master/software) directory contains all the software for the ranger. Microcontroller of choice is the LPC824 as it is small, cheap and powerful enough for this application.
-* The [documentation](https://github.com/Squantor/selfMixingLaserRanger/tree/master/documentation) directory contains lab notes when working on this project.
+* The [documentation](https://github.com/Squantor/selfMixingLaserRanger/tree/master/documentation) directory contains lab notes, datasheets and other documentation.

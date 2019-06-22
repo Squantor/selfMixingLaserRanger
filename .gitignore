@@ -27,3 +27,6 @@ _autosave-*
 
 # various cache files
 fp-info-cache
+
+# various build files
+*.log

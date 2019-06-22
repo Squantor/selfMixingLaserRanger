@@ -21,8 +21,31 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <board.hpp>
+/*
+Datastream that points to the user facing UART interface
+*/
 
-void boardInit(void)
+#include <results.h>
+#include <stream_uart.hpp>
+#include <chip.h>
+
+const static char streamUartName[] = "uartStream";
+result writeUart(const char *c);
+result readUart(char *c);
+const datastreamChar_t streamUart = {writeUart, readUart, streamUartName};
+
+result writeUart(const char *c)
 {
+    Chip_UART_SendBlocking(LPC_USART0, c, 1);
+    return noError;
 }
+
+result readUart(char *c)
+{
+    int readChars = Chip_UART_Read(LPC_USART0, c, 1);
+    if(readChars != 1)
+        return streamEmtpy;
+    else
+        return noError;
+}
+

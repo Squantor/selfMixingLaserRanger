@@ -21,22 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#ifndef BOARD_HPP
-#define BOARD_HPP
+/*
+Common used strings
+*/
 
-#define BOARD_ADC_CH0 3
-#define BOARD_ADC_CH1 4
-#define BOARD_ADC_CH2 5
-#define BOARD_ADC_CH3 6
-#define BOARD_ADC_CH4 7
-#define BOARD_ADC_CH5 8
-#define BOARD_ADC_CH6 9
-#define UART_TX 27
-#define UART_RX 26
+#include <strings.h>
 
-#define TICKRATE_HZ (10)    /* 10 ticks per second */
-
-void boardInit(void);
-void boardAdcInit(void);
-
-#endif
+char strHello[] = "Self mixing laser ranger\r\n";
+char strIs[] = " = ";
+char strSep[] = " | ";
+char strCrLf[] = "\r\n";

@@ -30,3 +30,7 @@ fp-info-cache
 
 # various build files
 *.log
+
+# intermediates
+build/
+bin/

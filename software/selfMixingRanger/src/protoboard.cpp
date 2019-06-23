@@ -39,24 +39,16 @@ void boardAdcInit(void)
     Chip_ADC_SetClockRate(LPC_ADC, 1000000);
     // setup sampling sequencer
     Chip_ADC_SetupSequencer(LPC_ADC, ADC_SEQA_IDX, (
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH0) | 
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH1) | 
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH2) | 
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH3) | 
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH4) | 
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH5) | 
-        ADC_SEQ_CTRL_CHANSEL(BOARD_ADC_CH6) | 
+        ADC_SEQ_CTRL_CHANSEL(GND_REF_ADC) | 
+        ADC_SEQ_CTRL_CHANSEL(LD_CURRENT_ADC) | 
+        ADC_SEQ_CTRL_CHANSEL(LD_PD_ADC) | 
         ADC_SEQ_CTRL_MODE_EOS ));
     // enable fixed pins after the sequencer
     // TODO investigate this as it is not according to the datasheet
     Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_SWM);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC3);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC4);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC5);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC6);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC7);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC8);
-    Chip_SWM_EnableFixedPin(SWM_FIXED_ADC9);
+    Chip_SWM_EnableFixedPin(GND_REF_SWM);
+    Chip_SWM_EnableFixedPin(LD_CURRENT_SWM);
+    Chip_SWM_EnableFixedPin(LD_PD_SWM);
     Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_SWM);
     
     Chip_ADC_ClearFlags(LPC_ADC, Chip_ADC_GetFlags(LPC_ADC));
@@ -79,13 +71,9 @@ void boardInit(void)
     Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
     Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO8, PIN_MODE_INACTIVE);
     Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO9, PIN_MODE_INACTIVE); 
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO23, PIN_MODE_INACTIVE);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO22, PIN_MODE_INACTIVE);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO21, PIN_MODE_INACTIVE);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO20, PIN_MODE_INACTIVE);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO19, PIN_MODE_INACTIVE);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO18, PIN_MODE_INACTIVE);
-    Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO17, PIN_MODE_INACTIVE);
+    Chip_IOCON_PinSetMode(LPC_IOCON, GND_REF_IOCON, PIN_MODE_INACTIVE);
+    Chip_IOCON_PinSetMode(LPC_IOCON, LD_CURRENT_IOCON, PIN_MODE_INACTIVE);
+    Chip_IOCON_PinSetMode(LPC_IOCON, LD_PD_IOCON, PIN_MODE_INACTIVE);
     Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_IOCON);
     // crystal clocking
     Chip_SetupXtalClocking();

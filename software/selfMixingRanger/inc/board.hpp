@@ -24,15 +24,18 @@ SOFTWARE.
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
-#define BOARD_ADC_CH0 3
-#define BOARD_ADC_CH1 4
-#define BOARD_ADC_CH2 5
-#define BOARD_ADC_CH3 6
-#define BOARD_ADC_CH4 7
-#define BOARD_ADC_CH5 8
-#define BOARD_ADC_CH6 9
-#define UART_TX 27
-#define UART_RX 26
+#define GND_REF_ADC         3
+#define GND_REF_IOCON       IOCON_PIO23
+#define GND_REF_SWM         SWM_FIXED_ADC3
+#define LD_CURRENT_ADC      4
+#define LD_CURRENT_IOCON    IOCON_PIO22
+#define LD_CURRENT_SWM      SWM_FIXED_ADC4
+#define LD_PD_ADC           5
+#define LD_PD_IOCON         IOCON_PIO21
+#define LD_PD_SWM           SWM_FIXED_ADC5
+
+#define UART_TX             27
+#define UART_RX             26
 
 #define TICKRATE_HZ (10)    /* 10 ticks per second */
 

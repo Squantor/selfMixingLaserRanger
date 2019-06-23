@@ -107,7 +107,7 @@ int main(void)
                 {
                     printDecNzU16(&streamUart, i);
                     dsPuts(&streamUart, strIs);
-                    printDecU16(&streamUart, ADC_DR_RESULT(rawSample));
+                    printDecU16(&streamUart, (uint16_t) ADC2MILLIVOLT(ADC_DR_RESULT(rawSample)));
                     dsPuts(&streamUart, strSep);
                 }
             }

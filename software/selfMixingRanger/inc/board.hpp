@@ -24,6 +24,10 @@ SOFTWARE.
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
+#define ADC_REF_MUVOLT      3300000
+
+#define ADC2MILLIVOLT(adc) (adc * (ADC_REF_MUVOLT/4096)/1000)
+
 #define GND_REF_ADC         3
 #define GND_REF_IOCON       IOCON_PIO23
 #define GND_REF_SWM         SWM_FIXED_ADC3
